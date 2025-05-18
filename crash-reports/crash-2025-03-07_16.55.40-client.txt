@@ -1,0 +1,76 @@
+---- Minecraft Crash Report ----
+// I bet Cylons wouldn't have this problem.
+
+Time: 07.03.2025, 16:55
+Description: Unexpected error
+
+java.lang.NullPointerException: Cannot invoke "im.nucker.utils.font.styled.StyledFont.getWidth(String)" because "im.nucker.utils.font.Fonts.mntsb[12]" is null
+	at im.nucker.ui.NotificationManager$Notification.draw(NotificationManager.java:86)
+	at im.nucker.ui.NotificationManager.draw(NotificationManager.java:55)
+	at net.minecraft.client.gui.IngameGui.renderIngameGui(IngameGui.java:179)
+	at net.minecraft.client.renderer.GameRenderer.updateCameraAndRender(GameRenderer.java:749)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:978)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:569)
+	at net.minecraft.client.main.Main.main(Main.java:189)
+	at Start.main(Start.java:11)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at im.nucker.ui.NotificationManager$Notification.draw(NotificationManager.java:86)
+	at im.nucker.ui.NotificationManager.draw(NotificationManager.java:55)
+	at net.minecraft.client.gui.IngameGui.renderIngameGui(IngameGui.java:179)
+
+-- Affected level --
+Details:
+	All players: 1 total; [ClientPlayerEntity['Lorensodjd'/35, l='ClientLevel', x=-500.53, y=70.37, z=-323.92]]
+	Chunk stats: Client Chunk Cache: 441, 88
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (16,64,120), Chunk: (at 0,4,8 in 1,7; contains blocks 16,0,112 to 31,255,127), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 111745 game time, 66020 day time
+	Server brand: vanilla
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.world.ClientWorld.fillCrashReport(ClientWorld.java:530)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2295)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:591)
+	at net.minecraft.client.main.Main.main(Main.java:189)
+	at Start.main(Start.java:11)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.5
+	Minecraft Version ID: 1.16.5
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 17.0.14, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Amazon.com Inc.
+	Memory: 452321992 bytes (431 MB) / 882900992 bytes (842 MB) up to 4223664128 bytes (4028 MB)
+	CPUs: 8
+	JVM Flags: 0 total; 
+	Launched Version: mcp
+	Backend library: LWJGL version 3.2.2 build 10
+	Backend API: Intel(R) Graphics GL version 4.6.0 - Build 31.0.101.5186, Intel
+	GL Caps: Using framebuffer using OpenGL 3.0
+	Using VBOs: Yes
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Graphics mode: fancy
+	Resource Packs: vanilla
+	Current Language: English (US)
+	CPU: 8x Intel(R) Core(TM) 3 100U
+	OptiFine Version: OptiFine_1.16.5_HD_U_G8
+	OptiFine Build: ~~NULL~~
+	Render Distance Chunks: 8
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 - Build 31.0.101.5186
+	OpenGlRenderer: Intel(R) Graphics
+	OpenGlVendor: Intel
+	CpuCount: 8

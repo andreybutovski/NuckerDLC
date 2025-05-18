@@ -1,0 +1,80 @@
+---- Minecraft Crash Report ----
+// You should try our sister game, Minceraft!
+
+Time: 22.03.2025, 03:03
+Description: Initializing game
+
+com.google.gson.JsonSyntaxException: java.io.EOFException: End of input at line 851 column 1 path $.styles
+	at com.google.gson.internal.Streams.parse(Streams.java:59)
+	at com.google.gson.JsonParser.parseReader(JsonParser.java:102)
+	at com.google.gson.JsonParser.parseReader(JsonParser.java:70)
+	at com.google.gson.JsonParser.parse(JsonParser.java:121)
+	at im.nucker.config.ConfigStorage.loadConfiguration(ConfigStorage.java:91)
+	at im.nucker.config.ConfigStorage.<init>(ConfigStorage.java:38)
+	at im.nucker.NuckerDLC.clientLoad(NuckerDLC.java:125)
+	at im.nucker.NuckerDLC.<init>(NuckerDLC.java:107)
+	at net.minecraft.client.Minecraft.<init>(Minecraft.java:431)
+	at net.minecraft.client.main.Main.main(Main.java:154)
+	at Start.main(Start.java:11)
+Caused by: java.io.EOFException: End of input at line 851 column 1 path $.styles
+	at com.google.gson.stream.JsonReader.nextNonWhitespace(JsonReader.java:1457)
+	at com.google.gson.stream.JsonReader.doPeek(JsonReader.java:491)
+	at com.google.gson.stream.JsonReader.hasNext(JsonReader.java:422)
+	at com.google.gson.internal.bind.TypeAdapters$28.read(TypeAdapters.java:779)
+	at com.google.gson.internal.bind.TypeAdapters$28.read(TypeAdapters.java:725)
+	at com.google.gson.internal.Streams.parse(Streams.java:49)
+	... 10 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at com.google.gson.internal.Streams.parse(Streams.java:59)
+	at com.google.gson.JsonParser.parseReader(JsonParser.java:102)
+	at com.google.gson.JsonParser.parseReader(JsonParser.java:70)
+	at com.google.gson.JsonParser.parse(JsonParser.java:121)
+	at im.nucker.config.ConfigStorage.loadConfiguration(ConfigStorage.java:91)
+	at im.nucker.config.ConfigStorage.<init>(ConfigStorage.java:38)
+	at im.nucker.NuckerDLC.clientLoad(NuckerDLC.java:125)
+	at im.nucker.NuckerDLC.<init>(NuckerDLC.java:107)
+	at net.minecraft.client.Minecraft.<init>(Minecraft.java:431)
+
+-- Initialization --
+Details:
+Stacktrace:
+	at net.minecraft.client.main.Main.main(Main.java:154)
+	at Start.main(Start.java:11)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.5
+	Minecraft Version ID: 1.16.5
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 17.0.14, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Amazon.com Inc.
+	Memory: 52430512 bytes (50 MB) / 171966464 bytes (164 MB) up to 4223664128 bytes (4028 MB)
+	CPUs: 8
+	JVM Flags: 0 total; 
+	Launched Version: mcp
+	Backend library: LWJGL version 3.2.2 build 10
+	Backend API: Intel(R) Graphics GL version 4.6.0 - Build 31.0.101.5186, Intel
+	GL Caps: Using framebuffer using OpenGL 3.0
+	Using VBOs: Yes
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	CPU: 8x Intel(R) Core(TM) 3 100U
+	OptiFine Version: OptiFine_1.16.5_HD_U_G8
+	OptiFine Build: ~~NULL~~
+	Render Distance Chunks: 8
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 - Build 31.0.101.5186
+	OpenGlRenderer: Intel(R) Graphics
+	OpenGlVendor: Intel
+	CpuCount: 8

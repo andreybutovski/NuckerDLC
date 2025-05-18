@@ -1,0 +1,124 @@
+---- Minecraft Crash Report ----
+// This doesn't make any sense!
+
+Time: 25.03.2025, 03:24
+Description: Exception generating new chunk
+
+java.util.ConcurrentModificationException
+	at java.base/java.util.HashMap.computeIfAbsent(HashMap.java:1221)
+	at net.minecraft.world.gen.feature.template.TemplateManager.getTemplate(TemplateManager.java:61)
+	at net.minecraft.world.gen.feature.template.TemplateManager.getTemplateDefaulted(TemplateManager.java:47)
+	at net.minecraft.world.gen.feature.structure.ShipwreckPieces$Piece.func_204754_a(ShipwreckPieces.java:71)
+	at net.minecraft.world.gen.feature.structure.ShipwreckPieces$Piece.<init>(ShipwreckPieces.java:49)
+	at net.minecraft.world.gen.feature.structure.ShipwreckPieces.func_204760_a(ShipwreckPieces.java:33)
+	at net.minecraft.world.gen.feature.structure.ShipwreckStructure$Start.func_230364_a_(ShipwreckStructure.java:35)
+	at net.minecraft.world.gen.feature.structure.ShipwreckStructure$Start.func_230364_a_(ShipwreckStructure.java:24)
+	at net.minecraft.world.gen.feature.structure.Structure.func_242785_a(Structure.java:276)
+	at net.minecraft.world.gen.feature.StructureFeature.func_242771_a(StructureFeature.java:38)
+	at net.minecraft.world.gen.ChunkGenerator.func_242705_a(ChunkGenerator.java:285)
+	at net.minecraft.world.gen.ChunkGenerator.func_242707_a(ChunkGenerator.java:273)
+	at net.minecraft.world.chunk.ChunkStatus.lambda$static$2(ChunkStatus.java:48)
+	at net.minecraft.world.chunk.ChunkStatus.doGenerationWork(ChunkStatus.java:243)
+	at net.minecraft.world.server.ChunkManager.lambda$chunkGenerate$18(ChunkManager.java:674)
+	at com.mojang.datafixers.util.Either$Left.map(Either.java:38)
+	at net.minecraft.world.server.ChunkManager.lambda$chunkGenerate$20(ChunkManager.java:672)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482)
+	at net.minecraft.world.chunk.ChunkTaskPriorityQueueSorter.lambda$func_219069_a$1(ChunkTaskPriorityQueueSorter.java:49)
+	at net.minecraft.util.concurrent.DelegatedTaskExecutor.driveOne(DelegatedTaskExecutor.java:120)
+	at net.minecraft.util.concurrent.DelegatedTaskExecutor.driveWhile(DelegatedTaskExecutor.java:180)
+	at net.minecraft.util.concurrent.DelegatedTaskExecutor.run(DelegatedTaskExecutor.java:136)
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1395)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec$$$capture(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at java.base/java.util.HashMap.computeIfAbsent(HashMap.java:1221)
+	at net.minecraft.world.gen.feature.template.TemplateManager.getTemplate(TemplateManager.java:61)
+	at net.minecraft.world.gen.feature.template.TemplateManager.getTemplateDefaulted(TemplateManager.java:47)
+	at net.minecraft.world.gen.feature.structure.ShipwreckPieces$Piece.func_204754_a(ShipwreckPieces.java:71)
+	at net.minecraft.world.gen.feature.structure.ShipwreckPieces$Piece.<init>(ShipwreckPieces.java:49)
+	at net.minecraft.world.gen.feature.structure.ShipwreckPieces.func_204760_a(ShipwreckPieces.java:33)
+	at net.minecraft.world.gen.feature.structure.ShipwreckStructure$Start.func_230364_a_(ShipwreckStructure.java:35)
+	at net.minecraft.world.gen.feature.structure.ShipwreckStructure$Start.func_230364_a_(ShipwreckStructure.java:24)
+	at net.minecraft.world.gen.feature.structure.Structure.func_242785_a(Structure.java:276)
+	at net.minecraft.world.gen.feature.StructureFeature.func_242771_a(StructureFeature.java:38)
+	at net.minecraft.world.gen.ChunkGenerator.func_242705_a(ChunkGenerator.java:285)
+	at net.minecraft.world.gen.ChunkGenerator.func_242707_a(ChunkGenerator.java:273)
+	at net.minecraft.world.chunk.ChunkStatus.lambda$static$2(ChunkStatus.java:48)
+	at net.minecraft.world.chunk.ChunkStatus.doGenerationWork(ChunkStatus.java:243)
+
+-- Chunk to be generated --
+Details:
+	Location: 67,15
+	Position hash: 64424509507
+	Generator: net.minecraft.world.gen.NoiseChunkGenerator@21b38c3c
+Stacktrace:
+	at net.minecraft.world.server.ChunkManager.lambda$chunkGenerate$18(ChunkManager.java:674)
+	at com.mojang.datafixers.util.Either$Left.map(Either.java:38)
+	at net.minecraft.world.server.ChunkManager.lambda$chunkGenerate$20(ChunkManager.java:672)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482)
+	at net.minecraft.world.chunk.ChunkTaskPriorityQueueSorter.lambda$func_219069_a$1(ChunkTaskPriorityQueueSorter.java:49)
+	at net.minecraft.util.concurrent.DelegatedTaskExecutor.driveOne(DelegatedTaskExecutor.java:120)
+	at net.minecraft.util.concurrent.DelegatedTaskExecutor.driveWhile(DelegatedTaskExecutor.java:180)
+	at net.minecraft.util.concurrent.DelegatedTaskExecutor.run(DelegatedTaskExecutor.java:136)
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1395)
+
+-- Affected level --
+Details:
+	All players: 1 total; [ServerPlayerEntity['NumberOne2298'/131, l='ServerLevel[New World]', x=959.11, y=87.69, z=10.58]]
+	Chunk stats: ServerChunkCache: 3476
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (-32,72,16), Chunk: (at 0,4,0 in -2,1; contains blocks -32,0,16 to -17,255,31), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 147659 game time, 147659 day time
+	Level name: New World
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Level weather: Rain time: 59155 (now: false), thunder time: 9296 (now: true)
+	Known server brands: vanilla
+	Level was modded: true
+	Level storage version: 0x04ABD - Anvil
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:1015)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:937)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:106)
+	at net.minecraft.server.MinecraftServer.func_240802_v_(MinecraftServer.java:743)
+	at net.minecraft.server.MinecraftServer.lambda$func_240784_a_$0(MinecraftServer.java:234)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.5
+	Minecraft Version ID: 1.16.5
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 17.0.14, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Amazon.com Inc.
+	Memory: 423278584 bytes (403 MB) / 2453667840 bytes (2340 MB) up to 4223664128 bytes (4028 MB)
+	CPUs: 8
+	JVM Flags: 0 total; 
+	Player Count: 1 / 8; [ServerPlayerEntity['NumberOne2298'/131, l='ServerLevel[New World]', x=959.11, y=87.69, z=10.58]]
+	Data Packs: vanilla
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Very likely; Jar signature invalidated
+	OptiFine Version: OptiFine_1.16.5_HD_U_G8
+	OptiFine Build: ~~NULL~~
+	Render Distance Chunks: 8
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 - Build 31.0.101.5186
+	OpenGlRenderer: Intel(R) Graphics
+	OpenGlVendor: Intel
+	CpuCount: 8

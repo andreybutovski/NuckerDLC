@@ -1,0 +1,80 @@
+---- Minecraft Crash Report ----
+// Hi. I'm Minecraft, and I'm a crashaholic.
+
+Time: 15.02.25, 10:06
+Description: Rendering screen
+
+java.lang.NullPointerException: Cannot invoke "im.nucker.utils.render.font.Font.getHeight(float)" because "im.nucker.utils.render.font.Fonts.sfsemibold" is null
+	at im.nucker.ui.dropdown.Panel.render(Panel.java:75)
+	at im.nucker.ui.dropdown.DropDown.render(DropDown.java:135)
+	at net.minecraft.client.renderer.GameRenderer.updateCameraAndRender(GameRenderer.java:795)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:978)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:569)
+	at net.minecraft.client.main.Main.main(Main.java:189)
+	at Start.main(Start.java:11)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at im.nucker.ui.dropdown.Panel.render(Panel.java:75)
+	at im.nucker.ui.dropdown.DropDown.render(DropDown.java:135)
+
+-- Screen render details --
+Details:
+	Screen name: im.nucker.ui.dropdown.DropDown
+	Mouse location: Scaled: (480, 270). Absolute: (960.000000, 540.000000)
+	Screen size: Scaled: (960, 540). Absolute: (1920, 1080). Scale factor of 2.000000
+
+-- Affected level --
+Details:
+	All players: 1 total; [ClientPlayerEntity['toperkich4'/440350, l='ClientLevel', x=4.00, y=199.15, z=7.50]]
+	Chunk stats: Client Chunk Cache: 121, 9
+	Level dimension: minecraft:the_end
+	Level spawn location: World: (4,200,7), Chunk: (at 4,12,7 in 0,0; contains blocks 0,0,0 to 15,255,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 19 game time, 18 day time
+	Server brand: NullCordX
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.world.ClientWorld.fillCrashReport(ClientWorld.java:530)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2295)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:585)
+	at net.minecraft.client.main.Main.main(Main.java:189)
+	at Start.main(Start.java:11)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.5
+	Minecraft Version ID: 1.16.5
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 17.0.13, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Amazon.com Inc.
+	Memory: 112631808 bytes (107 MB) / 308281344 bytes (294 MB) up to 3208642560 bytes (3060 MB)
+	CPUs: 4
+	JVM Flags: 0 total; 
+	Launched Version: mcp
+	Backend library: LWJGL version 3.2.2 build 10
+	Backend API: NVIDIA GeForce GTX 950/PCIe/SSE2 GL version 4.6.0 NVIDIA 560.94, NVIDIA Corporation
+	GL Caps: Using framebuffer using OpenGL 3.0
+	Using VBOs: Yes
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Graphics mode: fancy
+	Resource Packs: 
+	Current Language: English (US)
+	CPU: 4x Intel(R) Core(TM) i3-8100 CPU @ 3.60GHz
+	OptiFine Version: OptiFine_1.16.5_HD_U_G8
+	OptiFine Build: ~~NULL~~
+	Render Distance Chunks: 8
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 NVIDIA 560.94
+	OpenGlRenderer: NVIDIA GeForce GTX 950/PCIe/SSE2
+	OpenGlVendor: NVIDIA Corporation
+	CpuCount: 4

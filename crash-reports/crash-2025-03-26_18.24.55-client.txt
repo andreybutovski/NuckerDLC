@@ -1,0 +1,82 @@
+---- Minecraft Crash Report ----
+// I bet Cylons wouldn't have this problem.
+
+Time: 26.03.2025, 18:24
+Description: Unexpected error
+
+java.lang.IllegalStateException: Already building!
+	at net.minecraft.client.renderer.BufferBuilder.begin(BufferBuilder.java:303)
+	at net.minecraft.client.renderer.OverlayRenderer.renderUnderwater(OverlayRenderer.java:156)
+	at net.minecraft.client.renderer.OverlayRenderer.renderOverlays(OverlayRenderer.java:67)
+	at net.minecraft.client.renderer.GameRenderer.renderHand(GameRenderer.java:612)
+	at net.minecraft.client.renderer.GameRenderer.renderHand(GameRenderer.java:542)
+	at net.minecraft.client.renderer.GameRenderer.renderWorld(GameRenderer.java:998)
+	at net.minecraft.client.renderer.GameRenderer.updateCameraAndRender(GameRenderer.java:686)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:979)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:570)
+	at net.minecraft.client.main.Main.main(Main.java:189)
+	at Start.main(Start.java:11)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at net.minecraft.client.renderer.BufferBuilder.begin(BufferBuilder.java:303)
+	at net.minecraft.client.renderer.OverlayRenderer.renderUnderwater(OverlayRenderer.java:156)
+	at net.minecraft.client.renderer.OverlayRenderer.renderOverlays(OverlayRenderer.java:67)
+	at net.minecraft.client.renderer.GameRenderer.renderHand(GameRenderer.java:612)
+	at net.minecraft.client.renderer.GameRenderer.renderHand(GameRenderer.java:542)
+	at net.minecraft.client.renderer.GameRenderer.renderWorld(GameRenderer.java:998)
+
+-- Affected level --
+Details:
+	All players: 1 total; [ClientPlayerEntity['NoNameNuckerl'/130, l='ClientLevel', x=831.41, y=57.14, z=-274.61]]
+	Chunk stats: Client Chunk Cache: 441, 225
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (-32,72,16), Chunk: (at 0,4,0 in -2,1; contains blocks -32,0,16 to -17,255,31), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 158119 game time, 158119 day time
+	Server brand: vanilla
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.world.ClientWorld.fillCrashReport(ClientWorld.java:530)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2296)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:592)
+	at net.minecraft.client.main.Main.main(Main.java:189)
+	at Start.main(Start.java:11)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.5
+	Minecraft Version ID: 1.16.5
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 17.0.14, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Amazon.com Inc.
+	Memory: 902076416 bytes (860 MB) / 2898264064 bytes (2764 MB) up to 4223664128 bytes (4028 MB)
+	CPUs: 8
+	JVM Flags: 0 total; 
+	Launched Version: mcp
+	Backend library: LWJGL version 3.2.2 build 10
+	Backend API: Intel(R) Graphics GL version 4.6.0 - Build 31.0.101.5186, Intel
+	GL Caps: Using framebuffer using OpenGL 3.0
+	Using VBOs: Yes
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Graphics mode: fancy
+	Resource Packs: vanilla
+	Current Language: English (US)
+	CPU: 8x Intel(R) Core(TM) 3 100U
+	OptiFine Version: OptiFine_1.16.5_HD_U_G8
+	OptiFine Build: ~~NULL~~
+	Render Distance Chunks: 8
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	Shaders: null
+	OpenGlVersion: 4.6.0 - Build 31.0.101.5186
+	OpenGlRenderer: Intel(R) Graphics
+	OpenGlVendor: Intel
+	CpuCount: 8
